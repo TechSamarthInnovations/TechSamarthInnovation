@@ -1,0 +1,79 @@
+/* src/Component/Team/Team.css */
+
+.team-container {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-member {
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative; /* Position relative for absolute border */
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid transparent; /* Initial border color */
+    animation: runningBorder 5s linear infinite; /* Running border animation */
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.team-member-details {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px; /* Match border radius with image */
+}
+
+.team-member h3 {
+    font-size: 20px;
+    color: #ff5733; /* Match color with your theme */
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+@keyframes runningBorder {
+    0% {
+        border-color: #ff5733; /* Orange */
+    }
+    25% {
+        border-color: #ffa500; /* Light Orange */
+    }
+    50% {
+        border-color: #ffffff; /* White */
+    }
+    75% {
+        border-color: #ffa500; /* Light Orange */
+    }
+    100% {
+        border-color: #ff5733; /* Orange */
+    }
+}

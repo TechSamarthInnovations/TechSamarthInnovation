@@ -1,0 +1,18 @@
+/* src/Component/Services/Services.css */
+
+.services-container {
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.services-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services-container li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
