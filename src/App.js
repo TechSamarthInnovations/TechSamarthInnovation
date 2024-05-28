@@ -8,6 +8,7 @@ import Blogs from './Component/Blogs/Blogs';
 import Contact from './Component/Contact/Contact';
 import Footer from './Component/Footer/Footer';
 import ScrollButton from './Component/ScrollButton/ScrollButton';
+import Portfolio from './Component/Services/Portfolio/Portfolio';
 
 function App() {
     return (
@@ -19,6 +20,8 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/blogs" element={<Blogs />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+
             </Routes>
             <Footer />
             <ScrollButton />

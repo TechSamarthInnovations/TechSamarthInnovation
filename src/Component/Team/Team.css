@@ -1,28 +1,94 @@
 /* src/Component/Team/Team.css */
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #101010;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
 .team-container {
     text-align: center;
-    padding: 50px 0;
+    padding: 60px 20px;
+    background: url('C:/Dinesh_Projects/TechSamarth/TechSamarth/src/Component/Team/ai-background.svg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
 }
 
 .team-members {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .team-member {
-    max-width: 300px;
-    border-radius: 10px;
+    max-width: 280px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    position: relative; /* Position relative for absolute border */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
 }
 
 .team-member:hover {
-    transform: translateY(-5px);
+    transform: translateY(-15px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    transition: opacity 0.4s ease;
+}
+
+.team-member:hover img {
+    opacity: 0.85;
+}
+
+.team-member-details {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 20px 20px;
+    text-align: left;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    color: #ff6b6b;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.team-member p {
+    font-size: 18px;
+    color: #eeeeee;
+    line-height: 1.6;
+}
+
+@keyframes runningBorder {
+    0% {
+        border-color: #ff6b6b;
+    }
+    25% {
+        border-color: #ff9e6b;
+    }
+    50% {
+        border-color: #ffffff;
+    }
+    75% {
+        border-color: #ff9e6b;
+    }
+    100% {
+        border-color: #ff6b6b;
+    }
 }
 
 .team-member::after {
@@ -32,48 +98,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
-    border: 2px solid transparent; /* Initial border color */
-    animation: runningBorder 5s linear infinite; /* Running border animation */
+    border-radius: 20px;
+    border: 2px solid transparent;
+    animation: runningBorder 6s linear infinite;
 }
 
-.team-member img {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-}
-
-.team-member-details {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 0 0 10px 10px; /* Match border radius with image */
-}
-
-.team-member h3 {
-    font-size: 20px;
-    color: #ff5733; /* Match color with your theme */
-    margin-bottom: 10px;
-}
-
-.team-member p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.5;
-}
-
-@keyframes runningBorder {
-    0% {
-        border-color: #ff5733; /* Orange */
-    }
-    25% {
-        border-color: #ffa500; /* Light Orange */
-    }
-    50% {
-        border-color: #ffffff; /* White */
-    }
-    75% {
-        border-color: #ffa500; /* Light Orange */
-    }
-    100% {
-        border-color: #ff5733; /* Orange */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
     }
 }
